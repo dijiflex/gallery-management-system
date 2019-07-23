@@ -1,6 +1,4 @@
 
-
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -10,6 +8,12 @@
                 Blank Page
                 <small>Subheading</small>
             </h1>
+            <?php
+            $sql = "SELECT * FROM users WHERE id =1";
+            $result= $database->query($sql);
+            $user_result = mysqli_fetch_array($result);
+            echo $user_result['username'];
+            ?>
             <ol class="breadcrumb">
                 <li>
                     <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
