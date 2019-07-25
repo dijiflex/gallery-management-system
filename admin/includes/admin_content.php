@@ -9,10 +9,23 @@
                 <small>Subheading</small>
             </h1>
             <?php
-            $sql = "SELECT * FROM users WHERE id =1";
-            $result= $database->query($sql);
-            $user_result = mysqli_fetch_array($result);
-            echo $user_result['username'];
+           
+            // $result_set = USER::find_all_users();
+            // while ($row =mysqli_fetch_array($result_set)) {
+            //     echo $row['username'] ."<br>";
+            // }
+
+
+            // $found_user = USER::find_all_users_by_id(1);
+            // $user = USER::instantation($found_user);
+            
+            // echo $user->username;
+
+            $users = USER::find_all_users();
+            foreach ($users as $user) {
+                echo $user->$username ."<br>";
+            }
+
             ?>
             <ol class="breadcrumb">
                 <li>

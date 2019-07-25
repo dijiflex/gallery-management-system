@@ -27,16 +27,17 @@
      private function confirm_query($result)
      {
          if (!$result) {
-             die("Query Failed". $this->conn->error() );
+             die("Query Failed". $this->conn->error());
          }
      }
 
      public function escape_string($string)
      {
-         $escped_string = $this->$conn->mysqli_real_escape_string( $string);
+         $escped_string = $this->$conn->mysqli_real_escape_string($string);
          return $escped_string;
      }
-     public function the_insert_id(){
+     public function the_insert_id()
+     {
          return $this->conn->insert_id;
      }
  }
