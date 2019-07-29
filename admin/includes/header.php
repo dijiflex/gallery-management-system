@@ -1,7 +1,5 @@
-
-
 <?php ob_start(); ?>
-<?php include("init.php"); ?>
+<?php require_once("init.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -20,11 +19,15 @@
             // $user = USER::instantation($found_user);
             
             // echo $user->username;
+            // foreach ($users as $user) {
+            //     echo $user->username ."<br>";
+            // }
 
-            $users = USER::find_all_users();
-            foreach ($users as $user) {
-                echo $user->$username ."<br>";
-            }
+            $found_user = USER::find_all_users_by_id(2);
+            echo $found_user->username;
+            echo $found_user->last_name;
+
+           
 
             ?>
             <ol class="breadcrumb">
