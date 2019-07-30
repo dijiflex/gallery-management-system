@@ -1,4 +1,17 @@
+
+
 <?php include("includes/header.php"); ?>
+<?php
+if (!$session->is_signed_in()) {
+//id user is not logged in he is readirected to the log in page
+    header("Location: login.php");
+
+} else {
+    
+}
+
+
+?>
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

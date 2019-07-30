@@ -12,3 +12,7 @@ function classAutoLoader($class)
 }
 
 spl_autoload_register('classAutoLoader');
+//fnction to redirect the user to another page
+function redirect($location){
+header("Loction: {$location}");
+}

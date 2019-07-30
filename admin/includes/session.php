@@ -27,9 +27,15 @@ class SESSION
             //assigning two values to the object
             $this->user_id = $_SESSION['user_id'] =$user->id;
             $this->signed_in= true;
-        } 
+        }
     }
-
+    //method to log out the user
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($this->user_id);
+        $this->signed_in= false;
+    }
     //checckif the session user id is set
     private function check_the_login()
     {
