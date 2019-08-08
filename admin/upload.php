@@ -1,5 +1,31 @@
-<?php include("includes/header.php"); ?>
+<?php include("includes/header.php");
 
+if (!$session->is_signed_in()) {
+    //id user is not logged in he is readirected to the log in page
+    header("Location: login.php");
+} else {
+}
+?>
+
+<?php
+$message  = "";
+if (isset($_POST['submit'])) {
+  echo "this si working";
+
+
+  
+// if (isset($_FILES['file'])) {
+    $photo = new Photo();
+    $photo->title = $_POST['title'];
+    $photo->set_file($_FILES['file_upload']);
+
+    if ($photo->save()) {
+        $message = "Photo uploaded sucessfully";
+    } else {
+        $message = join("<br>", $photo->errors);
+    }
+}
+ ?>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,6 +58,8 @@
                     UPLOAD
                     <small>Subheading</small>
                 </h1>
+
+
                 <ol class="breadcrumb">
                     <li>
                         <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
@@ -41,12 +69,32 @@
                     </li>
                 </ol>
             </div>
+            <div class="col-md-6">
+            <?php echo $message   ?>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+
+                        <input type="text" name="title" class="form-control">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="file" name="file_upload">
+
+                    </div>
+
+                    <input type="submit" name="submit">
+
+                </form>
+            </div>
         </div>
         <!-- /.row -->
 
     </div>
 
-   
+
 </div>
 <!-- /#page-wrapper -->
 

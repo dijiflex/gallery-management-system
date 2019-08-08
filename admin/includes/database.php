@@ -36,9 +36,15 @@
          $escped_string = $this->conn->real_escape_string($string);
          return $escped_string;
      }
-     public function the_insert_id()
-     {
-         return $this->conn->insert_id;
+    //  public function the_insert_id()
+    //  {
+    //      return $this->conn->insert_id;
+    //  }
+
+     public function the_insert_id(){
+
+        
+         return mysqli_insert_id($this->conn);
      }
  }
 

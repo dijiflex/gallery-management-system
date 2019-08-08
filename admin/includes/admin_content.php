@@ -1,7 +1,3 @@
-
-
-
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -12,27 +8,43 @@
                 <small>Subheading</small>
             </h1>
             <?php
-           
-            // $result_set = USER::find_all_users();
-            // while ($row =mysqli_fetch_array($result_set)) {
-            //     echo $row['username'] ."<br>";
-            // }
+            // $user = new USER;
+            // $user->username = "NEW USER";
+            // $user->save();
+            $user = PHOTO::find_by_id(1);
+            echo $user->filename;
 
+            // $user->username = "job";
+            // $user->password = "123";
+            // $user->first_name = "job";
+            // $user->last_name = "job";
+            // $user->create();
 
-            // $found_user = USER::find_all_users_by_id(1);
-            // $user = USER::instantation($found_user);
-            
-            // echo $user->username;
+            // $user = USER::find_all_users_by_id(55);
+            // $user->username = "FINAL";
+            // $user->password = "123";
+            // $user->first_name = "job";
+            // $user->last_name = "job";
+
+            // $user->update();
+            // $users = USER::find_all();
             // foreach ($users as $user) {
-            //     echo $user->username ."<br>";
+            //     echo $user->username;
             // }
 
-            $found_user = USER::find_all_users_by_id(2);
-            echo $found_user->username;
-            echo $found_user->last_name;
+            // $photo = new PHOTO();
 
-           
+            // $photo->title = "NEW TITLE";
+            // $photo->size = 20;
+            // $photo->create();
 
+            
+
+
+            
+            
+
+            //$user->delete();
             ?>
             <ol class="breadcrumb">
                 <li>
